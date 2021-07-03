@@ -1,4 +1,4 @@
-const {Schema, SchemaType, model} = require('mongoose');
+const {Schema, model} = require('mongoose');
 
 const usuarioSchema = new Schema({
     email:{
@@ -12,7 +12,7 @@ const usuarioSchema = new Schema({
         unique: false,
         trim: false
     },
-    name: {
+    username: {
         type: String,
         unique: false,
         trim: true,

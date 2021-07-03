@@ -1,14 +1,14 @@
-const {AlterUser, Login, CreateUser, DeleteUser, FindUser, UsersAll, UserSearcher } = require('../controllers/Users');
+const {updateUser, createUser, deleteUser, findUser, usersAll, userSearcher } = require('../controllers/users');
+const { requireAuth } = require('../middlewares/auth');
 
 module.exports = (app, nextMain) => {
-  app.put('/users/:id', AlterUser);
-  app.post('/login', Login);
-  app.post('/users', CreateUser);
-  app.delete('/users/:id', DeleteUser);
-  app.get('/users/:username', FindUser);
-  app.get('/users', UsersAll);
-  app.get('/search/:username', UserSearcher);
-  app.get('/search/:id', UserSearcher);
+  app.post('/users', createUser);
+  app.put('/users/:id', updateUser);
+  app.get('/users', requireAuth, usersAll);
+  app.delete('/users/:id', deleteUser);
+  app.get('/users/:username', findUser);
+  app.get('/search/:username', userSearcher);
+  app.get('/search/:id', userSearcher);
   nextMain();
 }
 

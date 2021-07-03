@@ -42,18 +42,14 @@ const roomSchema = new Schema({
   status: {
       type: Boolean,
   },
-  dateEntry: {
+  dateEntry: {  //fecha de creación de la sala
       type: Date,
-      required: true
-  },
-  scheduledTimeStart: {
-    type: Date,
-    required: true
-  },
-  scheduledTimeFinish: {
-    type: Date,
-    required: true
-  },  
+      required: true,
+  }, 
+  numberSeats: {
+    type: String,
+    required: true,
+  } 
 });
 
 const Rooms = model('Rooms', roomSchema);
