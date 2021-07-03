@@ -8,6 +8,7 @@ const alteruser = require('./Users/AlterUser');
 const reservations = require('./Reservations/Reservations');
 const createreservations = require('./Reservations/CreateReservation');
 const deletereservations = require('./Reservations/DeleteReservations');
+const searchByUser = require('./Reservations/SearchByUser');
 
 
-module.exports = [auth, createuser, users, finduser, deleteuser, alteruser, reservations, createreservations, deletereservations];
+module.exports = [auth, createuser, users, finduser, deleteuser, alteruser, reservations, createreservations, deletereservations, searchByUser];

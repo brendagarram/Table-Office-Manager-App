@@ -4,8 +4,11 @@ import Login from "./Components/Login/Login";
 import Home from "./Layouts/Home/Home"
 import Register from "./Components/Login/Register/Register";
 import AlterUser from "./Components/alteruser/alteruser";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
