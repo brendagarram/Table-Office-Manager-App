@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // const Reservation = require("../models/reservations");
 // const Rooms = require('../models/roomsModel');
 // const mongoose = require('mongoose');
@@ -34,7 +33,6 @@
 //     }
 //   },
 // };
-=======
 const Reservation = require("../models/reservations");
 
 // const AlterReservation = async (req, res) => {
@@ -91,4 +89,3 @@ const ReservationAll = async (req, res) => {
 }
 
 module.exports = { CreateReservation, DeleteReservation, FindReservation, ReservationAll, }
->>>>>>> cfd198b7e1a50ebedde570381e90b370a7f2cbc8

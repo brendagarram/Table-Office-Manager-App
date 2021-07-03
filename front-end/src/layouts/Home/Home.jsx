@@ -5,34 +5,48 @@ import Office from "../../Components/Home/Office"
 const Home = () => {
 
   return <div className="Home">
-    <div className="container">
+
+    <div className="main-floor">
 
       <div className="lane">
-        <Office></Office>
-        <Office></Office>
+        <Office />
+        <Office />
       </div>
 
       <div className="lane">
 
         <div className="container-left">
-          <div className="subLane">
-          <Table> </Table>
-          <Table> </Table>
-          </div>
-          <div className="subLane">
-          <Table> </Table>
-          <Table> </Table>
-          </div>
-
+          <Table number={2}/>
+          <Table number={3}/>
+          <Table number={4}/>
+          <Table number={5}/>
         </div>
 
         <div className="container-right">
-          <Table> </Table>
-          <Table> </Table>
-          <Table> </Table>
+          <Table vertical />
+          <Table vertical />
+          <Table vertical />
+        </div>
+      </div>
+    </div>
+    <div className="second-floor">
+
+      <div className="lane">
+
+        <div className="container-left">
+          <Table vertical/>
+          <Table vertical/>
+          <Table vertical/>
         </div>
 
+        <div className="container-right">
+          <Table/>
+          <Table/>
+          <Table/>
+          <Table/>
+        </div>
       </div>
+
     </div>
   </div>
 }
