@@ -1,0 +1,131 @@
+.header {
+  position: absolute;
+width: 624px;
+height: 114px;
+left: 96px;
+top: 130px;
+
+font-family: "abel";
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 51px;
+
+color: #000000;
+}
+
+.header3 {
+  position: absolute;
+width: 369px;
+height: 59px;
+left: 202px;
+top: 64px;
+
+font-family: "abel";
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 27px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+}
+
+.header4 {
+  position: absolute;
+width: 362px;
+height: 35px;
+left: 926px;
+top: 293px;
+
+font-family: "abel";
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 28px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+
+@font-face {
+  font-family: abel;
+  src: url("abel.ttf");
+  
+}
+
+.w3-round {
+position: absolute;
+width: 100px;
+height: 100px;
+left: 78px;
+top: 43px;
+
+}
+
+.username {
+  position: absolute;
+width: 396px;
+height: 78px;
+left: 907px;
+top: 355px;
+
+background: #FFFFFF;
+border: 1px solid #DDDDDD;
+box-sizing: border-box;
+}
+
+.password {
+  position: absolute;
+width: 396px;
+height: 78px;
+left: 907px;
+top: 445px;
+
+background: #FFFFFF;
+border: 1px solid #DDDDDD;
+box-sizing: border-box;
+}
+
+.log{
+  position: absolute;
+width: 125px;
+height: 52px;
+left: 1178px;
+top: 540px;
+
+background: #FFC063;
+border: 1px solid #999794;
+box-sizing: border-box;
+}
+
+.register {
+  position: absolute;
+  left: 920px;
+  height: 400px;
+  top: 540px;
+  color: purple;
+
+}
+.forgpass {
+
+position: absolute;
+  left: 920px;
+  height: 400px;
+  top: 568px;
+  color: purple;
+
+}
+
+.fondo {
+
+  position: absolute;
+width: 820px;
+height: 615px;
+left: 0px;
+top: 219px;
+}

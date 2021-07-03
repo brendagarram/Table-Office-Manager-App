@@ -28,3 +28,9 @@ module.exports = (app, next) => register(app, [
   auth,
   root,
 ], next);
+
+//Para reservaciones
+// const reservations = require('./Reservations/Reservations');
+// const createreservations = require('./Reservations/CreateReservation');
+// const deletereservations = require('./Reservations/DeleteReservations');
+

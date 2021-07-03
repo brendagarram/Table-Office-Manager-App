@@ -1,0 +1,8 @@
+cellphone rem
+username
+
+confirm pass	add
+
+change pass in alteruser
+
+ropa sans font

@@ -1,0 +1,105 @@
+.email {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 155px;
+  padding-left: 30px;
+}
+
+.name {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 255px;
+  padding-left: 30px;
+}
+
+.pass {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 355px;
+  padding-left: 30px;
+}
+
+.confirmpass {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 455px;
+  padding-left: 30px;
+}
+
+.header2 {
+  position: absolute;
+  width: 624px;
+  height: 114px;
+  left: 96px;
+  top: -40px;
+
+  font-family: "abel";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 51px;
+}
+
+.fondoregist {
+  position: absolute;
+  width: 751px;
+  height: 614px;
+  left: 664px;
+  top: 9px;
+}
+
+.registalt {
+  position: absolute;
+  width: 125px;
+  height: 52px;
+  left: 280px;
+  top: 560px;
+
+  background: #086331;
+  border: 1px solid #999794;
+  box-sizing: border-box;
+}
+
+.cnps {
+  position: absolute;
+
+  left: 47px;
+  top: 429px;
+  font-family: "abel";
+}
+
+.em {
+  position: absolute;
+
+  left: 47px;
+  top: 129px;
+  font-family: "abel";
+}
+
+.inps {
+  position: absolute;
+
+  left: 47px;
+  top: 329px;
+  font-family: "abel";
+}
+
+.nm {
+  position: absolute;
+
+  left: 47px;
+  top: 229px;
+  font-family: "abel";
+}
+
+body {
+  background-color: #f7f7f7;
+}
