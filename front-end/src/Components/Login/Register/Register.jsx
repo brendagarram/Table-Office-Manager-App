@@ -42,8 +42,8 @@ const Register = () => {
                                 <input type="text" className="name" id="name" placeholder="Ej. John Doe" onChange={onChange} value={data.name}></input><br></br>
                                 <label className="inps">Insert your password</label><br></br>
                                 <input type="password" className="pass" id="password" placeholder="**********" onChange={onChange} value={data.pass}></input><br></br>
-                                {/* <label className="cnps ">Confirm your password</label><br></br> */}
-                                {/* <input type="password" className="confirmpass" id=""placeholder="**********" onChange={onChange} value={data.confirmpass}></input><br></br> */}
+                                <label className="cnps ">Confirm your password</label><br></br>
+                                <input type="password" className="confirmpass" id=""placeholder="**********" onChange={onChange} value={data.confirmpass}></input><br></br>
                                 <input type="submit" className="registalt" value="Registrar" />
                             </form>
                         </div>

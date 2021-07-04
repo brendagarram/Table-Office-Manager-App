@@ -71,7 +71,7 @@ const Login = () => {
                         <div id="formFooter">
                             <a className="register" href="http://localhost:3000/registrarse">Registrarse</a>
                             <br></br>
-                            {/* <a className="forgpass" href="http://localhost:3000/alteruser">¿Olvidó la contraseña?</a> */}
+                            <a className="forgpass" href="http://localhost:3000/alteruser">¿Olvidó la contraseña?</a>
                         </div>
 
                     </div>
