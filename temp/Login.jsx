@@ -28,7 +28,7 @@ const Login = () => {
         f1()
         auth = isAuthenticated();
         if(auth)
-            history.push("/inicio");
+            history.push("/main");
             
     }
 
@@ -78,7 +78,7 @@ const Login = () => {
         );
     }else {
         return (
-            <Redirect to="/inicio"/>
+            <Redirect to="/main"/>
         )
     }
 }

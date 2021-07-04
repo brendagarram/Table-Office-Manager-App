@@ -13,7 +13,7 @@ const Login = () => {
     let history = useHistory();
     
     const [data, setData] = useState({
-        username:"",
+        email:"",
         password:""
     });
 
@@ -28,8 +28,7 @@ const Login = () => {
         Auth(data);
         f1()
         auth = isAuthenticated();
-        if(auth)
-            history.push("/inicio");
+        if(auth) history.push("/main");
             
     }
 
@@ -62,8 +61,8 @@ const Login = () => {
                         </div>
                     
                         <form onSubmit={onSubmit}>
-                            <input type="text" className="username" id="username" placeholder="User"
-                             onChange={onChange} value={data.username}/>
+                            <input type="text" className="username" id="email" placeholder="User"
+                             onChange={onChange} value={data.email}/>
                             <input type="password" className="password" id="password" placeholder="Password"
                              onChange={onChange} value={data.password}/>
                             <input type="submit" className="log" value="Log In" />
@@ -80,7 +79,7 @@ const Login = () => {
         );
     }else {
         return (
-            <Redirect to="/inicio"/>
+            <Redirect to="/main"/>
         )
     }
 }
