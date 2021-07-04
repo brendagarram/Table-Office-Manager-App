@@ -66,8 +66,8 @@ const Home = () => {
           <Table table="n" />
           <Table table="o" />
         </div>
-
       </div>
+
     </div>
   </div>
 }

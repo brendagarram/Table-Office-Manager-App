@@ -3,13 +3,17 @@ import './Login.css';
 import Auth from '../../services/Auth';
 import  { Redirect, useHistory}  from "react-router-dom";
 import isAuthenticated from "../../services/IsAuthenticated";
+import logo from "./logo.png"
+import fondo1 from "./fondo1.png"
+
+
 
 const Login = () => {
     let auth = isAuthenticated();
     let history = useHistory();
     
     const [data, setData] = useState({
-        username:"",
+        email:"",
         password:""
     });
 
@@ -24,8 +28,7 @@ const Login = () => {
         Auth(data);
         f1()
         auth = isAuthenticated();
-        if(auth)
-            history.push("/inicio");
+        if(auth) history.push("/main");
             
     }
 
@@ -45,22 +48,30 @@ const Login = () => {
     
     if(auth === false){
         return (
+            
                 <div className="wrapper fadeInDown">
-                    <div id="formContent">
 
+                    <img src={fondo1} className="fondo" alt="User Icon" />
+                    <div className = "header"><h3>Welcome to Table Office Manager</h3></div>
+                    <div className = "header3"><h3>Table Office Manager</h3></div>
+                    <div className = "header4"><h3>Join us!</h3></div>
+                    <div id="formContent">
+                        <div className="fadeIn first">
+                            <img src={logo} className="w3-round" alt="User Icon" />
+                        </div>
                     
                         <form onSubmit={onSubmit}>
-                            <input type="text" className="fadeIn second" id="username" placeholder="user"
-                             onChange={onChange} value={data.username}/>
-                            <input type="password" className="fadeIn third" id="password" placeholder="password"
+                            <input type="text" className="username" id="email" placeholder="User"
+                             onChange={onChange} value={data.email}/>
+                            <input type="password" className="password" id="password" placeholder="Password"
                              onChange={onChange} value={data.password}/>
-                            <input type="submit" className="fadeIn fourth" value="Log In" />
+                            <input type="submit" className="log" value="Log In" />
                         </form>
                         
                         <div id="formFooter">
-                            <a className="underlineHover" href="http://localhost:3000/registrarse">Registrarse</a>
+                            <a className="register" href="http://localhost:3000/registrarse">Registrarse</a>
                             <br></br>
-                            <a className="underlineHover" href="#">Olvido la contraseña?</a>
+                            {/* <a className="forgpass" href="http://localhost:3000/alteruser">¿Olvidó la contraseña?</a> */}
                         </div>
 
                     </div>
@@ -68,7 +79,7 @@ const Login = () => {
         );
     }else {
         return (
-            <Redirect to="/inicio"/>
+            <Redirect to="/main"/>
         )
     }
 }

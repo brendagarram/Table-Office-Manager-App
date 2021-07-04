@@ -1,62 +1,105 @@
-#email[type=text] {
-    background-color: #f6f6f6;
-    border: none;
-    color: #0d0d0d;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
-    width: 85%;
-    border: 2px solid #f6f6f6;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-  }
+.email {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 155px;
+  padding-left: 30px;
+}
 
-  #name[type=text] {
-    background-color: #f6f6f6;
-    border: none;
-    color: #0d0d0d;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
-    width: 85%;
-    border: 2px solid #f6f6f6;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-  }
+.name {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 255px;
+  padding-left: 30px;
+}
 
-  #cel[type=text] {
-    background-color: #f6f6f6;
-    border: none;
-    color: #0d0d0d;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
-    width: 85%;
-    border: 2px solid #f6f6f6;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-  }
+.pass {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 355px;
+  padding-left: 30px;
+}
+
+.confirmpass {
+  position: absolute;
+  width: 336px;
+  height: 60px;
+  left: 37px;
+  top: 455px;
+  padding-left: 30px;
+}
+
+.header2 {
+  position: absolute;
+  width: 624px;
+  height: 114px;
+  left: 96px;
+  top: -40px;
+
+  font-family: "abel";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 51px;
+}
+
+.fondoregist {
+  position: absolute;
+  width: 751px;
+  height: 614px;
+  left: 664px;
+  top: 9px;
+}
+
+.registalt {
+  position: absolute;
+  width: 125px;
+  height: 52px;
+  left: 280px;
+  top: 560px;
+
+  background: #086331;
+  border: 1px solid #999794;
+  box-sizing: border-box;
+}
+
+.cnps {
+  position: absolute;
+
+  left: 47px;
+  top: 429px;
+  font-family: "abel";
+}
+
+.em {
+  position: absolute;
+
+  left: 47px;
+  top: 129px;
+  font-family: "abel";
+}
+
+.inps {
+  position: absolute;
+
+  left: 47px;
+  top: 329px;
+  font-family: "abel";
+}
+
+.nm {
+  position: absolute;
+
+  left: 47px;
+  top: 229px;
+  font-family: "abel";
+}
+
+body {
+  background-color: #f7f7f7;
+}

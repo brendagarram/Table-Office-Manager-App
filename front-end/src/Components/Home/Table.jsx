@@ -17,7 +17,7 @@ const Table = ({ vertical, occupied, table }) => {
       <div onClick={toggleChair} id={`${table}-3`} className={occupied ? "chair-occupied" : "chair"}/>
       <div onClick={toggleChair} id={`${table}-4`} className={occupied ? "chair-occupied" : "chair"}/>
     </div>
-</div>
-)}
+  )
+}
 
 export default Table

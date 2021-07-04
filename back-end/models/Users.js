@@ -1,17 +1,17 @@
-const {Schema, SchemaType, model} = require('mongoose');
+const { Schema, SchemaType, model } = require('mongoose');
 
 const usuarioSchema = new Schema({
-    email:{
+    email: {
         type: String,
         unique: true,
         trim: true
     },
-    name:{
+    name: {
         type: String,
         unique: false,
         trim: true
     },
-    password:{
+    password: {
         type: String,
         required: true,
         unique: false,
