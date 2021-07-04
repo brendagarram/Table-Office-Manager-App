@@ -21,8 +21,10 @@ module.exports = {
         }
     },
     updateUser: async (req, res, next) => {
-        let data = {};
+        console.log('edito usuario');
+        console.log(req.body);
         const body = req.body;
+        let data = {};
         if(body.username) {
             data = {'username': body.username};
         } else if (body.password) {
@@ -31,50 +33,45 @@ module.exports = {
             console.log('SE cambió la contraseña');
         }
         const _id = req.params.id;
+        console.log(_id);
         const filter = { _id };
         const update = { new: true };
         try {
             const user = await Users.findByIdAndUpdate(filter, data, update).exec();
+            return res.status(200).json({ user });
+        } catch (err) {
+            next(400);
+        }
+    },
+    updatePassword: async (req, res) => {
+        const body = req.body;
+        console.log(req.params);
+        console.log(body);
+        const { password } = req.body;
+        const passwordCrypt = await bc.Crypt(password);
+        const filter = { _id };
+        const update = { new: true };
+        try {
+            const user = await Users.findByIdAndUpdate(filter, passwordCrypt, update).exec();
             return res.status(200).json({user});
         } catch (err) {
             next(400, err);
         }
-    },
-    updatePassword: async (req, res) => {
-        const { user, authorization } = req.headers;
-        // const { authorization } = req.headers;
-        // if (!authorization) {
-        //     return next();
-        // }
-
-        // const token = authorization.split(' ')[1];
-        // let verificationLink = `http://localhost:3000/changePassword/${token}`
-
-        // jwt.verify(token, secret, (err, decodedToken) => {
-        //     if (err) { 
-        //     console.log(err)
-        //     next(403); 
-        //     }
-        //     console.log(decodedToken);
-        //     Users.findOne({ _id: decodedToken.payload.id }, (err, user) => {
-        //     if (err) { next(500, err); }
+        // try {
             
-        //     });
-        // });
-        try {
-            await transporter.sendMail({
-                from: '"Forgot password" <brendagar88@gmail.com>', // sender address
-                to: user.email, // list of receivers
-                subject: "Forgot password ✔", // Subject line
-                text: "Forgot your password?", // plain text body
-                html: `
-                    <b>Please on the following link to complete the process</b>
-                    <a href="${verificationLink}">${verificationLink}</a>
-                    `, // html body
-              });
-        } catch (err){
-            console.log(err);
-        }
+        //     await transporter.sendMail({
+        //         from: '"Forgot password" <brendagar88@gmail.com>', // sender address
+        //         to: user.email, // list of receivers
+        //         subject: "Forgot password ✔", // Subject line
+        //         text: "Forgot your password?", // plain text body
+        //         html: `
+        //             <b>Please on the following link to complete the process</b>
+        //             <a href="${verificationLink}">${verificationLink}</a>
+        //             `, // html body
+        //       });
+        // } catch (err){
+        //     console.log(err);
+        // }
     },
     deleteUser: async (req, res) => {
         try {
@@ -97,8 +94,10 @@ module.exports = {
     },
     
     usersAll: async (req, res) => {
+        console.log('traigo todos los usuarios');
         try {
-            const users = await Users.find({}).exec()
+            const users = await Users.find({}).exec();
+            console.log('teng los usuarios', users);
             res.status(200).json({users});
         } catch (error) {
             console.log(error);

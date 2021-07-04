@@ -14,7 +14,7 @@ module.exports = (secret) => (req, resp, next) => {
       console.log(err)
       next(403); 
     }
-    console.log(decodedToken);
+    //console.log(decodedToken);
     Users.findOne({ _id: decodedToken.payload.id }, (err, user) => {
       if (err) { next(500, err); }
       req.headers.user = user;

@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
-import  { Redirect }  from "react-router-dom";
-import './alteruser.css';
+//import  { Redirect }  from "react-router-dom";
+import './AlterUser.css';
 import ConfirmToMail from './confToMail';
 import forgpass from './forgpass.png'
 

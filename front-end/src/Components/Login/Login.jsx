@@ -13,7 +13,7 @@ const Login = () => {
     let history = useHistory();
     
     const [data, setData] = useState({
-        username:"",
+        email:"",
         password:""
     });
 
@@ -25,26 +25,25 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        console.log(data);
         Auth(data);
-        f1()
+        //f1()
         auth = isAuthenticated();
-        if(auth)
-            history.push("/inicio");
-            
+        if(auth) history.push("/main");    
     }
 
-    function resolveAfter2Seconds(x) {
-        return new Promise(resolve => {
-          setTimeout(() => {
-              window.location.reload();
-            resolve(x);
-          }, 1000);
-        });
-      }
+    // function resolveAfter2Seconds(x) {
+    //     return new Promise(resolve => {
+    //       setTimeout(() => {
+    //           window.location.reload();
+    //         resolve(x);
+    //       }, 1000);
+    //     });
+    //   }
 
-    async function f1() {
-        await resolveAfter2Seconds(15);
-      }
+    // async function f1() {
+    //     await resolveAfter2Seconds(15);
+    //   }
 
     
     if(auth === false){
@@ -62,8 +61,8 @@ const Login = () => {
                         </div>
                     
                         <form onSubmit={onSubmit}>
-                            <input type="text" className="username" id="username" placeholder="User"
-                             onChange={onChange} value={data.username}/>
+                            <input type="text" className="username" id="email" placeholder="User"
+                             onChange={onChange} value={data.email}/>
                             <input type="password" className="password" id="password" placeholder="Password"
                              onChange={onChange} value={data.password}/>
                             <input type="submit" className="log" value="Log In" />
@@ -80,7 +79,7 @@ const Login = () => {
         );
     }else {
         return (
-            <Redirect to="/inicio"/>
+            <Redirect to="/main"/>
         )
     }
 }

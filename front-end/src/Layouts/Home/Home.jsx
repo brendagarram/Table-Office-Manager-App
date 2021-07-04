@@ -9,13 +9,14 @@ const Home = () => {
     <div className="main-floor">
 
       <div className="lane">
-        <Office />
-        <Office />
+        <Office office={1} />
+        <Office office={2} />
       </div>
 
       <div className="lane">
 
         <div className="container-left">
+          <Table number={1}/>
           <Table number={2}/>
           <Table number={3}/>
           <Table number={4}/>
