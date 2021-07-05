@@ -7,7 +7,7 @@ const { key } = config;
 module.exports = {
     createToken: async(req, resp, next) => {
         console.log(req.body);
-        const { email, password, username } = req.body;
+        const { email, password } = req.body;
         console.log('password del body', password);
         const emailQuery = req.body.email;
         console.log(emailQuery);
@@ -17,22 +17,26 @@ module.exports = {
             } else {
                 await Users.findOne({ email: emailQuery }, (error, res) => {
                     console.log('error', error);
+                    console.log(res);
                     if (!res) {
                         next(403);
                     } else {
                         console.log('respuesta', res);
+                        console.log(res._id);
                         bcrypt.compare(password, res.password, (err, result) => {
                             console.log('búsqueda de email', result);
+                            console.log(res._id, 'para payload')
                             if (!result) {
                                 next(401);
                             } else {
-                                const payload = {
-                                    id: res._id,
-                                    username: username,
-                                    check: true
+                                const payload = { 
+                                  id: res._id,
+                                  check: true
                                 };
-                                const token = jwt.sign({ payload },
-                                    key, { expiresIn: '24h' }, //1 mes
+                                const token = jwt.sign(
+                                    { payload },
+                                    key, 
+                                    { expiresIn: '24h' }, 
                                 );
                                 resp.json({
                                     user: res, //

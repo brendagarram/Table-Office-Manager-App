@@ -27,10 +27,8 @@ module.exports = {
         } else if (body.password) {
             const passwordCrypt = await bc.Crypt(body.password);
             data = { 'password': passwordCrypt };
-            console.log('SE cambió la contraseña');
         }
         const _id = req.params.id;
-        console.log(_id);
         const filter = { _id };
         const update = { new: true };
         try {
@@ -89,10 +87,8 @@ module.exports = {
     },
 
     usersAll: async(req, res) => {
-        console.log('traigo todos los usuarios');
         try {
             const users = await Users.find({}).exec();
-            console.log('teng los usuarios', users);
             res.status(200).json({ users });
         } catch (error) {
             console.log(error);
@@ -100,7 +96,6 @@ module.exports = {
     },
 
     userSearcher: async(req, res) => {
-        console.log('ok');
         try {
             const username = req.params.username;
             const users = await Users.find({ 'username': { $regex: '.*' + username + '.*' } });
