@@ -20,6 +20,16 @@ const reservationSchema = new Schema({
         required:true,
         type: String,
         
+    },
+    date:{
+        required:true,
+        type:String,
+        trim:true
+    },
+    occupied:{
+        required:true,
+        type: Array,
+        trim: true
     }
 });
 

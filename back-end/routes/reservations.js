@@ -1,4 +1,4 @@
-const { createReservation, deleteReservation, findReservation, reservationAll, searchByUser,} = require('../controllers/Reservations');
+const { createReservation, deleteReservation, findReservation, reservationAll, searchByUser, searchByDay} = require('../controllers/Reservations');
 
 module.exports = (app, nextMain) => {
   app.post('/reservations', createReservation);
@@ -6,6 +6,6 @@ module.exports = (app, nextMain) => {
   app.get('/reservation/:number', findReservation);
   app.get('/reservations', reservationAll);
   app.get('/reservations/:user', searchByUser);
-  app.get()
+  app.get('/reservations_by_date/:date', searchByDay);
   nextMain();
 }

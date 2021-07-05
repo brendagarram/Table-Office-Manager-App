@@ -34,13 +34,25 @@
 //   },
 // };
 const Reservation = require("../models/reservations");
+const Search = require("../middlewares/checkDate");
+const Block = require("../middlewares/timeStop");
 
 module.exports = {
   createReservation: async (req, res) => {
     try{
       const body = req.body;
-      const reservation = await Reservation.create({Start:body.Start, Finish:body.Finish, users:body.users, seat:body.seat });
-      return res.status(200).json({reservation});
+      let blocked = Block(body.Start, body.Finish);
+      let date = body.Start;
+      date = date[0]+""+date[1]+date[2]+date[3]+date[4]+date[5]+date[6]+date[7]+date[8]+date[9];
+      const number = body.Start[11]+""+body.Start[12];
+      const repeated = await Search(date, number);
+      console.log(repeated);
+      if(repeated == true){
+        const reservation = await Reservation.create({Start:body.Start, Finish:body.Finish, users:body.users, seat:body.seat, date: date, occupied: blocked});
+        return res.status(200).json({reservation});
+      }else{
+        console.log("hay repetidos");
+      }
     } catch(error){
         console.log(error);
     }
@@ -80,4 +92,14 @@ module.exports = {
         console.log(error);
     }
   },
+  searchByDay: async (req, res) => {
+    try{
+      let date = req.params.date;
+      date = date[0]+""+date[1]+date[2]+date[3]+date[4]+date[5]+date[6]+date[7]+date[8]+date[9];;
+      const data =await Reservation.find({}).where('date').equals(date).sort({Start:'asc'}).exec();
+      res.status(200).json({data});
+    } catch(error){
+      console.log(error);
+    }
+  }
 }
