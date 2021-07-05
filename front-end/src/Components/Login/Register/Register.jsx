@@ -4,8 +4,6 @@ import './Register.css';
 import SignIn from './SignIn';
 import regist from './regist.png'
 
-
-
 const Register = () => {
     const [data, setData] = useState({
         email:"",
@@ -37,14 +35,13 @@ const Register = () => {
                             <form onSubmit={onSubmit}>
                                 <label className="em">Your e-mail</label><br></br>
                                 <input type="text" className="email" id="email" placeholder="E-mail" onChange={onChange} value={data.email}></input><br></br>
-                                
                                 <label className="nm">Name</label><br></br>
                                 <input type="text" className="name" id="name" placeholder="Ej. John Doe" onChange={onChange} value={data.name}></input><br></br>
                                 <label className="inps">Insert your password</label><br></br>
                                 <input type="password" className="pass" id="password" placeholder="**********" onChange={onChange} value={data.pass}></input><br></br>
                                 <label className="cnps ">Confirm your password</label><br></br>
                                 <input type="password" className="confirmpass" id=""placeholder="**********" onChange={onChange} value={data.confirmpass}></input><br></br>
-                                <input type="submit" className="registalt" value="Registrar" />
+                                <input type="submit" className="registalt" value="Registrar"/>
                             </form>
                         </div>
                     </div>

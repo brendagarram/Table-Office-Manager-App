@@ -3,7 +3,7 @@ import "./App.css";
 import Login from "./Components/Login/Login";
 import Home from "./Layouts/Home/Home"
 import Register from "./Components/Login/Register/Register";
-import AlterUser from "./Components/AlterUser/AlterUser.jsx";
+import AlterUser from "./Components/updatePassword/updatePassword.jsx";
 import {
   BrowserRouter as Router,
   Switch,

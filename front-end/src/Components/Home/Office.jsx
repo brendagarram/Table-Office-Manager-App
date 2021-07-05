@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Office.css';
 
 const Office = ({occupiedSeat }) => {
-const chairsByIndex = document.querySelectorAll('.OfficeChair') 
+  const chairsByIndex = document.querySelectorAll('.OfficeChair') 
   
   const [chairList, setChairList] = useState([])
   const [occupied, setOccupied] = useState([])

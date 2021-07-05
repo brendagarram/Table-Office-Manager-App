@@ -1,6 +1,6 @@
 import './Table.css';
 
-const Table = ({ vertical, occupied, number, chairId }) => {
+const Table = ({ vertical, occupied, table }) => {
 
   
 
@@ -9,15 +9,13 @@ const Table = ({ vertical, occupied, number, chairId }) => {
     event.target.classList.toggle("green")
   }
 
-  // chairId = number 8, 9, 10 , 11 
-
   return (
     <div className={vertical ? "table-v" : "table"}>
-      <div onClick={toggleChair} className={occupied ? "chair-occupied" : "chair"}/>
-      <div onClick={toggleChair} className={occupied ? "chair-occupied" : "chair"}/>
+      <div onClick={toggleChair} id={`${table}-1`} className={occupied ? "chair-occupied" : "chair"}/>
+      <div onClick={toggleChair} id={`${table}-2`} className={occupied ? "chair-occupied" : "chair"}/>
       <div onClick={toggleChair} className="tableSurface"/>
-      <div onClick={toggleChair}className={occupied ? "chair-occupied" : "chair"}/>
-      <div onClick={toggleChair}className={occupied ? "chair-occupied" : "chair"}/>
+      <div onClick={toggleChair} id={`${table}-3`} className={occupied ? "chair-occupied" : "chair"}/>
+      <div onClick={toggleChair} id={`${table}-4`} className={occupied ? "chair-occupied" : "chair"}/>
     </div>
   )
 }

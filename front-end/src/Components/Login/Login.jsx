@@ -29,7 +29,8 @@ const Login = () => {
         Auth(data);
         //f1()
         auth = isAuthenticated();
-        if(auth) history.push("/main");    
+        if(auth) history.push("/main");
+            
     }
 
     // function resolveAfter2Seconds(x) {
@@ -50,7 +51,6 @@ const Login = () => {
         return (
             
                 <div className="wrapper fadeInDown">
-
                     <img src={fondo1} className="fondo" alt="User Icon" />
                     <div className = "header"><h3>Welcome to Table Office Manager</h3></div>
                     <div className = "header3"><h3>Table Office Manager</h3></div>

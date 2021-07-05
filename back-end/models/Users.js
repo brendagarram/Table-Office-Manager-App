@@ -17,12 +17,6 @@ const usuarioSchema = new Schema({
         unique: false,
         trim: true,
     },
-    password: {
-        type: String,
-        required: true,
-        unique: false,
-        trim: false
-    }
 });
 
 const Users = model('Users', usuarioSchema);
