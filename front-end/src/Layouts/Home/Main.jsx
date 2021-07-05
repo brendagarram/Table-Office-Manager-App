@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './Main.css';
 import Table from "../../Components/Home/Table"
 import Office from "../../Components/Home/Office"
@@ -9,8 +9,15 @@ const Home = () => {
 
   const [reservation, setReservations] = useState([])
 
+  // const makeTable = ({ quantity, vertical }) => {
+
+  // }
+
+ 
+
   useEffect(() => {
     getReservations().then((data) => {
+      console.log(data.reservations);
       setReservations(data.reservations)
     })
   }, [])
@@ -23,9 +30,9 @@ const Home = () => {
   }
 
   return <div className="Home">
-    {/* <button onClick={getSeats} >getSeats</button> */}
+    
+    <Reservations className="" reservations={ reservation } callback={ getChair } />
     <div className="main-floor">
-      <Reservations reservations={ reservation } />
 
       <div className="lane">
         <Office office="1" />

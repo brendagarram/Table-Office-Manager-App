@@ -1,7 +1,10 @@
 import { useState } from "react"
 import { deleteReservation, createReservation } from "../../Layouts/Home/queries"
+import './Reservations.css';
+
 
 export default function Reservations({ reservations }) {
+  
 
   const [startTime, setStartTime] = useState("")
   const [finishTime, setFinishTime] = useState("")

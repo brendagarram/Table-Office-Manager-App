@@ -20,7 +20,6 @@ const deleteReservation = async(id) => {
 }
 
 const createReservation = async({ start, finish, users, seat }) => {
-    console.log("params: ", { start, finish, users, seat });
     try {
         const { data } = await axios.post(`${window.location.protocol}//${window.location.hostname}:8000/reservations/`, { headers: { Authorization: `Bearer ${userToken}` } }, {
             "Start": new Date(start),
