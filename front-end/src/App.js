@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Login from "./Components/Login/Login";
-import Home from "./Layouts/Home/Home"
+import Home from "./Layouts/Home/Main"
 import Register from "./Components/Login/Register/Register";
 import AlterUser from "./Components/updatePassword/updatePassword.jsx";
 import {

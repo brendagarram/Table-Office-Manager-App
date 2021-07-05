@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './Home.css';
+import './Main.css';
 import Table from "../../Components/Home/Table"
 import Office from "../../Components/Home/Office"
 import {getReservations} from './queries';
