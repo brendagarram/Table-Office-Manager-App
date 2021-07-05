@@ -1,38 +1,3 @@
-// const Reservation = require("../models/reservations");
-// const Rooms = require('../models/roomsModel');
-// const mongoose = require('mongoose');
-
-// module.exports = {
-//   createReservation: async (req, res, next) => {
-//     console.log('ok');
-//     const { scheduledTimeStart, scheduledTimeFinish, date, users, seat, room } = req.body;
-//     console.log(room);
-//     try{
-//       const newReservation = new Reservation({
-//         date, 
-//         users,
-//         seat,
-//         room,
-//         scheduledTimeStart,
-//         scheduledTimeFinish,
-//       });
-//       console.log(newReservation);
-//       const reservationSaved = await newReservation.save();
-//       //buscar primero el room y luego guardar reservaciones de esa sala
-//       const connection = mongoose.connection;
-//       connection.db.collection("rooms", function(err, collection){
-//         collection.findOneAndUpdate({name: room}, { $push: { reservations: reservationSaved } }, (err, res) => {
-//           if (err) {console.log(err)};
-//           console.log(res);
-//         });
-//       });
-//       console.log(reservationSaved);
-//       return res.status(200).json({reservationSaved});
-//     } catch(err) {
-//         return next(400);
-//     }
-//   },
-// };
 const Reservation = require("../models/reservations");
 const Search = require("../middlewares/checkDate");
 const Block = require("../middlewares/timeStop");
@@ -41,6 +6,7 @@ module.exports = {
   createReservation: async (req, res) => {
     try{
       const body = req.body;
+<<<<<<< HEAD
       let blocked = Block(body.Start, body.Finish);
       let date = body.Start;
       date = date[0]+""+date[1]+date[2]+date[3]+date[4]+date[5]+date[6]+date[7]+date[8]+date[9];
@@ -53,6 +19,11 @@ module.exports = {
       }else{
         console.log("hay repetidos");
       }
+=======
+      console.log(body);
+      const reservation = await Reservation.create({ Start:body.Start, Finish:body.Finish, users:body.users, seat:body.seat });
+      return res.status(200).json({reservation});
+>>>>>>> 1970c6ecc54995291b1a7a3ec8017df01f08a463
     } catch(error){
         console.log(error);
     }
