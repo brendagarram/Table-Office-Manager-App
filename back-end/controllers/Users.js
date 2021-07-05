@@ -1,32 +1,32 @@
 const auth = require('../configs/compare');
 const bc = require('../configs/crypt');
 // const transporter = require('../configs/nodemailer');
-const Users = require('../models/users');
+const Users = require('../models/Users');
 
 module.exports = {
-    createUser: async (req, res, next) => {
+    createUser: async(req, res, next) => {
         const { email, password, username } = req.body;
-        if ( !password || !email || (!email && !password) || password.length <= 6 ) { //Agregar la validación de email con expresiones regulares
+        if (!password || !email || (!email && !password) || password.length <= 6) { //Agregar la validación de email con expresiones regulares
             return next(400);
         }
-        try{
-          const invalidUser = await Users.findOne({ email: email });
-          if (invalidUser) return next(403);
-          const passwordCrypt = await bc.Crypt(password);
-          const user = await Users.create({ email: email, password: passwordCrypt, username: username });
-          return res.status(200).json({ user });
-        } catch(err) {
+        try {
+            const invalidUser = await Users.findOne({ email: email });
+            if (invalidUser) return next(403);
+            const passwordCrypt = await bc.Crypt(password);
+            const user = await Users.create({ email: email, password: passwordCrypt, username: username });
+            return res.status(200).json({ user });
+        } catch (err) {
             next(501, err);
         }
     },
-    updateUser: async (req, res, next) => {
+    updateUser: async(req, res, next) => {
         const body = req.body;
         let data = {};
-        if(body.username) {
-            data = {'username': body.username};
+        if (body.username) {
+            data = { 'username': body.username };
         } else if (body.password) {
             const passwordCrypt = await bc.Crypt(body.password);
-            data = {'password': passwordCrypt};
+            data = { 'password': passwordCrypt };
             console.log('SE cambió la contraseña');
         }
         const _id = req.params.id;
@@ -40,7 +40,7 @@ module.exports = {
             next(400);
         }
     },
-    updatePassword: async (req, res) => {
+    updatePassword: async(req, res) => {
         const body = req.body;
         const { password } = req.body;
         const passwordCrypt = await bc.Crypt(password);
@@ -48,12 +48,12 @@ module.exports = {
         const update = { new: true };
         try {
             const user = await Users.findByIdAndUpdate(filter, passwordCrypt, update).exec();
-            return res.status(200).json({user});
+            return res.status(200).json({ user });
         } catch (err) {
             next(400, err);
         }
         // try {
-            
+
         //     await transporter.sendMail({
         //         from: '"Forgot password" <brendagar88@gmail.com>', // sender address
         //         to: user.email, // list of receivers
@@ -68,44 +68,44 @@ module.exports = {
         //     console.log(err);
         // }
     },
-    deleteUser: async (req, res) => {
+    deleteUser: async(req, res) => {
         try {
             const id = req.params.id;
-            const users = await Users.remove({'_id':id}).exec();
-            return res.status(200).json({users});
+            const users = await Users.remove({ '_id': id }).exec();
+            return res.status(200).json({ users });
         } catch (error) {
             console.log(error);
         }
     },
-    
-    findUser: async (req, res) => {
+
+    findUser: async(req, res) => {
         try {
             const username = req.params.username;
-            const users = await Users.findOne({'username':username}).exec();
-            return res.status(200).json({users});
+            const users = await Users.findOne({ 'username': username }).exec();
+            return res.status(200).json({ users });
         } catch (error) {
             console.log(error);
         }
     },
-    
-    usersAll: async (req, res) => {
+
+    usersAll: async(req, res) => {
         console.log('traigo todos los usuarios');
         try {
             const users = await Users.find({}).exec();
             console.log('teng los usuarios', users);
-            res.status(200).json({users});
+            res.status(200).json({ users });
         } catch (error) {
             console.log(error);
         }
     },
-    
-    userSearcher: async (req, res) => {
+
+    userSearcher: async(req, res) => {
         console.log('ok');
         try {
             const username = req.params.username;
-            const users = await Users.find({'username':{$regex:'.*' + username + '.*' }});
-            return res.status(200).json({users});
-        }catch(error){
+            const users = await Users.find({ 'username': { $regex: '.*' + username + '.*' } });
+            return res.status(200).json({ users });
+        } catch (error) {
             console.log(error)
         }
     }
