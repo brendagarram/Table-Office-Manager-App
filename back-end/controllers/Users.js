@@ -1,11 +1,10 @@
 const auth = require('../configs/compare');
 const bc = require('../configs/crypt');
-const transporter = require('../configs/nodemailer');
+// const transporter = require('../configs/nodemailer');
 const Users = require('../models/users');
 
 module.exports = {
     createUser: async (req, res, next) => {
-        console.log('createUser rq', req.body)
         const { email, password, username } = req.body;
         if ( !password || !email || (!email && !password) || password.length <= 6 ) { //Agregar la validación de email con expresiones regulares
             return next(400);
@@ -21,8 +20,6 @@ module.exports = {
         }
     },
     updateUser: async (req, res, next) => {
-        console.log('edito usuario');
-        console.log(req.body);
         const body = req.body;
         let data = {};
         if(body.username) {
@@ -45,8 +42,6 @@ module.exports = {
     },
     updatePassword: async (req, res) => {
         const body = req.body;
-        console.log(req.params);
-        console.log(body);
         const { password } = req.body;
         const passwordCrypt = await bc.Crypt(password);
         const filter = { _id };

@@ -65,7 +65,7 @@ module.exports = {
   },
   reservationAll: async (req, res) => {
     try {
-        const reservations = await Reservation.find({}).exec()
+        const reservations = await Reservation.find({}).populate('users').exec()
         res.status(200).json({reservations});
     } catch (error) {
         console.log(error);
