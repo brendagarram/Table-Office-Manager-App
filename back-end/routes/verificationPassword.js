@@ -1,4 +1,5 @@
+
 module.exports = (app, nextMain) => {
-  app.post('/changePassword', updatePassword);
+  app.post('/changePassword', requireAuth, updatePassword);
   return nextMain();
 };

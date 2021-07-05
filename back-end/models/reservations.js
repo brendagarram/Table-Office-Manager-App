@@ -13,14 +13,13 @@ const reservationSchema = new Schema({
     },
     users:{
         required:true,
-        type: String,
-        // type: Schema.ObjectId,
-        // ref:'Users'
+        type: Schema.ObjectId,
+        ref:'Users'
     },
     seat:{
         required:true,
         type: String,
-        //ref: 'Seats'
+        
     }
 });
 

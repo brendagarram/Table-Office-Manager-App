@@ -1,4 +1,4 @@
-const {updateUser, createUser, deleteUser, findUser, usersAll, userSearcher } = require('../controllers/users');
+const { updateUser, createUser, deleteUser, findUser, usersAll, userSearcher } = require('../controllers/Users');
 const { requireAuth } = require('../middlewares/auth');
 
 module.exports = (app, nextMain) => {
