@@ -17,10 +17,11 @@ export default function Reservations({ reservations }) {
     return reservations?.map((reservation, index) => {
       return (
         <li key={index}>
-          <span>{reservation.seat} -------</span>
-          <span>{new Date(reservation.Start).getDay()} --------</span>
-          <span>{reservation.Start.match(/\d\d:\d\d/)} --------</span>
-          <span>{reservation.Finish.match(/\d\d:\d\d/)} -------</span>
+          {console.log(reservation)}
+          <span>{reservation.seat} </span>
+          <span>{new Date(reservation.Start).getDay()} </span>
+          <span>De: {reservation.Start.match(/\d\d:\d\d/)}</span>
+          <span>A: {reservation.Finish.match(/\d\d:\d\d/)}</span>
           <button onClick={() => deleteReservation(reservation._id)} >delete</button>
         </li>
       )

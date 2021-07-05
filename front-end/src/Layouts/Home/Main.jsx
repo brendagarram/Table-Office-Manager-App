@@ -7,7 +7,7 @@ import Reservations from '../../Components/Home/Reservations';
 
 const Home = () => {
 
-  const [reservations, setReservations] = useState([])
+  const [reservation, setReservations] = useState([])
 
   useEffect(() => {
     getReservations().then((data) => {
@@ -16,17 +16,16 @@ const Home = () => {
   }, [])
 
   const getSeats = () => {
-    reservations.reservations.map((seat) => {
+    reservation.reservations.map((seat) => {
       console.log(seat);
       return seat._id
     })
   }
 
   return <div className="Home">
-    <button onClick={getSeats} >getSeats</button>
+    {/* <button onClick={getSeats} >getSeats</button> */}
     <div className="main-floor">
-      <Reservations reservations={ reservations} />
-      {/* {console.log("Reservations", reservations)} */}
+      <Reservations reservations={ reservation } />
 
       <div className="lane">
         <Office office="1" />
@@ -40,7 +39,6 @@ const Home = () => {
           <Table table="b" />
           <Table table="c" />
           <Table table="d" />
-          <Table table="e" />
         </div>
 
         <div className="container-right">
