@@ -1,4 +1,4 @@
-const { createReservation, deleteReservation, findReservation, reservationAll, searchByUser,} = require('../controllers/Reservations');
+const { createReservation, deleteReservation, findReservation, reservationAll, searchByUser, searchByDay} = require('../controllers/Reservations');
 const { requireAuth } = require('../middlewares/auth');
 
 module.exports = (app, nextMain) => {
