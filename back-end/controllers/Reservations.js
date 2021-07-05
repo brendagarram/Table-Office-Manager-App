@@ -6,7 +6,6 @@ module.exports = {
   createReservation: async (req, res) => {
     try{
       const body = req.body;
-<<<<<<< HEAD
       let blocked = Block(body.Start, body.Finish);
       let date = body.Start;
       date = date[0]+""+date[1]+date[2]+date[3]+date[4]+date[5]+date[6]+date[7]+date[8]+date[9];
@@ -19,11 +18,6 @@ module.exports = {
       }else{
         console.log("hay repetidos");
       }
-=======
-      console.log(body);
-      const reservation = await Reservation.create({ Start:body.Start, Finish:body.Finish, users:body.users, seat:body.seat });
-      return res.status(200).json({reservation});
->>>>>>> 1970c6ecc54995291b1a7a3ec8017df01f08a463
     } catch(error){
         console.log(error);
     }
