@@ -8,6 +8,9 @@
     padding: 3rem;
 }
 
+.main-floor {
+    border: 1px solid #ccf;
+}
 
 .lane {
     display: flex;
@@ -26,23 +29,23 @@
     gap: 50px;
 }
 
-
 .container-right {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     display: flex;
     gap: 30px;
-    
 }
 
+.second-floor {
+    border: 1px solid #ccf;
+}
 
 .second-floor .lane {
     display: grid;
     grid-template-columns: 4fr 5fr;
     min-height: 400px;
 }
-
 
 .second-floor .container-left {
     justify-content: space-evenly;

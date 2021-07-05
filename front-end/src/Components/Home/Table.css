@@ -9,11 +9,9 @@
 .table .tableSurface {
     width: 304px;
     height: 74px;
-
     grid-column: 1 / 5;
-
     background-color: #eee;
-    border: 1px solid violet;
+    border: 1px solid #aad;
     border-radius: 10px;
 }
 
@@ -23,9 +21,8 @@
     height: 30px;
     width: 58px;
     background-color: #eee;
-    border: 1px solid hotpink;
+    border: 1px solid #aad;
 }
-
 
 .table .chair:nth-of-type(1) {
     grid-column: 1 / 2;
@@ -51,16 +48,13 @@
     justify-self: center;
 }
 
-
 .table-v .tableSurface {
     height: 304px;
     width: 74px;
-
     grid-column: 2 / 3;
-    grid-row: 1 / 5;    
-
+    grid-row: 1 / 5;
     background-color: #eee;
-    border: 1px solid violet;
+    border: 1px solid #aad;
     border-radius: 10px;
 }
 
@@ -70,7 +64,7 @@
     width: 30px;
     height: 58px;
     background-color: #eee;
-    border: 1px solid hotpink;
+    border: 1px solid #aad;
 }
 
 .table-v .chair:nth-of-type(1) {
@@ -81,7 +75,6 @@
 .table-v .chair:nth-of-type(2) {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
-
 }
 
 .table-v .chair:nth-of-type(4) {
@@ -94,10 +87,10 @@
     grid-column: 3 / 4;
 }
 
-.chair:hover{
-    background-color: hotpink;
-    border: 1px solid hotpink;
+.chair:hover {
+    background-color: #cef;
 }
+
 .chair.green {
     background: greenyellow;
 }
