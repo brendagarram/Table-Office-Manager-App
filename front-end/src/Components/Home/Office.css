@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   place-items: center;
-  border: 1px solid #aad;
   font-family: 'Bebas Neue', cursive;
   letter-spacing: 2px;
   font-size: 12px;
@@ -38,4 +37,14 @@
   letter-spacing: 2px;
   font-size: 12px;
   user-select: none;
+}
+
+
+.OfficeChair:hover, .OfficeTableSurface:hover {
+  background-color: #cef;
+}
+
+.OfficeChair.green, .OfficeTableSurface.green {
+  background: rgb(9, 41, 59);
+  color: white;
 }

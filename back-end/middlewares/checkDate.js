@@ -8,7 +8,7 @@ const Search = async (date, number)=> {
         const Forbiden = [];
         const data =await Reservation.find({}).where('date').equals(date).sort({Start:'asc'}).exec();
         data.forEach((element) => {
-            console.log(element);
+            // console.log(element);
             for(let i=0; i<element.occupied.length; i++){
                 Forbiden.push(element.occupied[i])
             }  

@@ -15,7 +15,6 @@ const Home = () => {
 
   useEffect(() => {
     getReservations().then((data) => {
-      console.log(data.reservations);
       setReservations(data.reservations)
     })
   }, [])

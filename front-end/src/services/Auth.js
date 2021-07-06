@@ -7,7 +7,7 @@ const Auth = async (userData) => {
       password: userData.password
     })
     
-      console.log(data.user);
+      // console.log(data.user);
       window.localStorage.setItem("token", data.token);
       window.localStorage.setItem("userId", data.user._id);
       window.localStorage.setItem("userEmail", data.user.email);

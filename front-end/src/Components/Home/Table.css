@@ -111,5 +111,6 @@
 }
 
 .chair.green {
-  background: greenyellow;
+  background: rgb(9, 41, 59);
+  color: white;
 }

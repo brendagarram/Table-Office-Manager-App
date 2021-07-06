@@ -5,6 +5,7 @@ const Table = ({ vertical, occupied, table, setChair }) => {
   
 
   function toggleChair(event){
+    document.querySelectorAll('.OfficeChair, .chair, .OfficeTableSurface').forEach((e) => {e.classList.remove('green')})
     setChair(event.target.id)
     event.target.classList.toggle("green")
   }
