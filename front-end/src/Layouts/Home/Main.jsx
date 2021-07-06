@@ -21,7 +21,7 @@ const Home = () => {
 
   return <div className="Home">
     
-    
+    <button onClick={ () =>  localStorage.clear() }>Sign Out</button>
     <Reservations className="" reservations={ reservation } chair={ chair } />
     <div className="main-floor">
 
