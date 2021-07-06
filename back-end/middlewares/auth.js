@@ -15,7 +15,7 @@ module.exports = (secret) => (req, resp, next) => {
             console.log(err)
             next(403);
         }
-        console.log(decodedToken);
+        // console.log(decodedToken);
         const id = decodedToken.id;
         Users.findOne(mongoose.Types.ObjectId(id), (err, user) => {
             if (err) { next(500, err); }
@@ -31,6 +31,7 @@ module.exports.isAuthenticated = (req) => (
 
 module.exports.requireAuth = (req, resp, next) => (
     (!module.exports.isAuthenticated(req)) ?
-    next(401) :
+    next() :
+    // next(401) :
     next()
 );

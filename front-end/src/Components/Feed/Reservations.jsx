@@ -18,7 +18,7 @@ const Reservations = () => {
 
 
 }
-console.log(data);
+// console.log(data);
 
     return(
         <h1>onichan</h1>

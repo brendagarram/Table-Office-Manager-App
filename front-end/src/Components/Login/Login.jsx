@@ -25,7 +25,7 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(data);
+        // console.log(data);
         Auth(data);
         f1()
         auth = isAuthenticated();

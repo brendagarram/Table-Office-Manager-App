@@ -1,0 +1,52 @@
+.reservations {
+  border: 1px solid #eee;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: baseline;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 2px 6px 15px 1px rgba(1, 21, 65, 0.1);
+  padding: 20px 0px;
+}
+
+.createNew {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px;
+  gap: 10px;
+
+}
+
+.schedule {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto);
+  grid-gap: 10px;
+  list-style: none;
+  overflow-y: scroll;
+}
+
+.schedule li {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 30px auto;
+}
+
+.schedule li > span:first-child {
+  margin: auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 2px 6px 15px 1px rgba(1, 21, 65, 0.1);
+}
+
+.schedule li > span:not(first-child) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+}

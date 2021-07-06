@@ -10,10 +10,11 @@ const Home = () => {
   const [reservation, setReservations] = useState([]) // From query: ReservationsAll
   const [chair, setChair] = useState('') // iD of chair to be in focus
 
+  //Make Function to set occupied places at this minute
+
 
   useEffect(() => {
     getReservations().then((data) => {
-      console.log(data.reservations);
       setReservations(data.reservations)
     })
   }, [])
@@ -26,8 +27,8 @@ const Home = () => {
     <div className="main-floor">
 
       <div className="lane">
-        <Office office="1" />
-        <Office office="2" />
+        <Office setChair={setChair} office="z" />
+        <Office setChair={setChair} office="x" />
       </div>
 
       <div className="lane">
