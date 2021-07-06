@@ -11,7 +11,6 @@ module.exports = {
       date = date[0]+""+date[1]+date[2]+date[3]+date[4]+date[5]+date[6]+date[7]+date[8]+date[9];
       const number = body.Start[11]+""+body.Start[12];
       const repeated = await Search(date, number);
-      console.log(repeated);
       if(repeated == true){
         const reservation = await Reservation.create({Start:body.Start, Finish:body.Finish, users:body.users, seat:body.seat, date: date, occupied: blocked});
         return res.status(200).json({reservation});

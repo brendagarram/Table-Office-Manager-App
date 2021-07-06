@@ -39,7 +39,6 @@ module.exports = {
         }
     },
     updatePassword: async(req, res) => {
-        const body = req.body;
         const { password } = req.body;
         const passwordCrypt = await bc.Crypt(password);
         const filter = { _id };
