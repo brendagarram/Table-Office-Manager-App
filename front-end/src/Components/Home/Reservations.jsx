@@ -3,24 +3,20 @@ import { deleteReservation, createReservation } from "../../Layouts/Home/queries
 import './Reservations.css';
 
 
-export default function Reservations({ reservations }) {
+export default function Reservations({ reservations, chair }) {
   
 
   const [startTime, setStartTime] = useState("")
   const [finishTime, setFinishTime] = useState("")
   const [date, setDate] = useState("")
-  const [seat, setSeat] = useState("") // This is a temporary state/ dev use only
 
 
-  const user = window.localStorage.getItem("email")
-
-
+  const user = window.localStorage.userId
 
   const ReservationsSchedule = () => {
     return reservations?.map((reservation, index) => {
       return (
         <li key={index}>
-          {console.log(reservation)}
           <span>{reservation.seat} </span>
           <span>{new Date(reservation.Start).getDay()} </span>
           <span>De: {reservation.Start.match(/\d\d:\d\d/)}</span>
@@ -31,8 +27,6 @@ export default function Reservations({ reservations }) {
     })
   }
 
-
-
   return (
     <div>
       <ul>
@@ -41,9 +35,6 @@ export default function Reservations({ reservations }) {
       <p>Martes 8:00 am a 12pm</p>
       <p>Miercoles 8:00 am a 12pm</p>
       <p>Jueves 8:00 am a 12pm</p>
-      <input onChange={(event) => setSeat(event.target.value)}
-        id="seat"
-        type="text" />
       <input onChange={(event) => setStartTime(event.target.value)}
         id="date"
         type="time" />
@@ -57,16 +48,11 @@ export default function Reservations({ reservations }) {
         createReservation({
           start: new Date(`${date}T${startTime}:00`),
           finish: new Date(`${date}T${finishTime}:00`),
-          users: "60e0c85aaf2c283dd99493d2",
-          seat: seat
+          users: user,
+          seat: chair
         })
       }}> + </button>
     </div>
   )
-  // TODO:
-  // DONE fetch reservations DONE 
-  // DONE updatestate from inputs with use effect 
-  // POST True / Done from inputs
-  
-  // toggle: on click + ( ) => display calendar input 
+
 }
