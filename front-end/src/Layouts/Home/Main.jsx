@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './Main.css';
 import Table from "../../Components/Home/Table"
 import Office from "../../Components/Home/Office"
@@ -7,7 +7,9 @@ import Reservations from '../../Components/Home/Reservations';
 
 const Home = () => {
 
-  const [reservations, setReservations] = useState([])
+  const [reservation, setReservations] = useState([]) // From query: ReservationsAll
+  const [chair, setChair] = useState('') // iD of chair to be in focus
+
 
   useEffect(() => {
     getReservations().then((data) => {
@@ -16,18 +18,12 @@ const Home = () => {
     })
   }, [])
 
-  const getSeats = () => {
-    reservations.reservations.map((seat) => {
-      console.log(seat);
-      return seat._id
-    })
-  }
 
   return <div className="Home">
-    <button onClick={getSeats} >getSeats</button>
+    
+    <button onClick={ () =>  localStorage.clear() }>Sign Out</button>
+    <Reservations className="" reservations={ reservation } chair={ chair } />
     <div className="main-floor">
-      <Reservations reservations={ reservations} />
-      {/* {console.log("Reservations", reservations)} */}
 
       <div className="lane">
         <Office office="1" />
@@ -37,17 +33,16 @@ const Home = () => {
       <div className="lane">
 
         <div className="container-left">
-          <Table table="a" />
-          <Table table="b" />
-          <Table table="c" />
-          <Table table="d" />
-          <Table table="e" />
+          <Table setChair={setChair} table="a" />
+          <Table setChair={setChair} table="b" />
+          <Table setChair={setChair} table="c" />
+          <Table setChair={setChair} table="d" />
         </div>
 
         <div className="container-right">
-          <Table vertical table="f" />
-          <Table vertical table="g" />
-          <Table vertical table="h" />
+          <Table setChair={setChair} vertical table="f" />
+          <Table setChair={setChair} vertical table="g" />
+          <Table setChair={setChair} vertical table="h" />
         </div>
       </div>
     </div>
@@ -56,16 +51,16 @@ const Home = () => {
       <div className="lane">
 
         <div className="container-left">
-          <Table vertical table="i" />
-          <Table vertical table="j" />
-          <Table vertical table="k" />
+          <Table setChair={setChair} vertical table="i" />
+          <Table setChair={setChair} vertical table="j" />
+          <Table setChair={setChair} vertical table="k" />
         </div>
 
         <div className="container-right">
-          <Table table="l" />
-          <Table table="m" />
-          <Table table="n" />
-          <Table table="o" />
+          <Table setChair={setChair} table="l" />
+          <Table setChair={setChair} table="m" />
+          <Table setChair={setChair} table="n" />
+          <Table setChair={setChair} table="o" />
         </div>
       </div>
     </div>

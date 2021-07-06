@@ -27,24 +27,24 @@ const Login = () => {
         e.preventDefault();
         console.log(data);
         Auth(data);
-        //f1()
+        f1()
         auth = isAuthenticated();
         if(auth) history.push("/main");
             
     }
 
-    // function resolveAfter2Seconds(x) {
-    //     return new Promise(resolve => {
-    //       setTimeout(() => {
-    //           window.location.reload();
-    //         resolve(x);
-    //       }, 1000);
-    //     });
-    //   }
+    function resolveAfter2Seconds(x) {
+        return new Promise(resolve => {
+          setTimeout(() => {
+              window.location.reload();
+            resolve(x);
+          }, 1000);
+        });
+      }
 
-    // async function f1() {
-    //     await resolveAfter2Seconds(15);
-    //   }
+    async function f1() {
+        await resolveAfter2Seconds(15);
+      }
 
     
     if(auth === false){
