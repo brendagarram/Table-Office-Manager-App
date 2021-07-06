@@ -6,11 +6,8 @@ const { key } = config;
 
 module.exports = {
     createToken: async(req, resp, next) => {
-        console.log(req.body);
         const { email, password } = req.body;
-        console.log('password del body', password);
         const emailQuery = req.body.email;
-        console.log(emailQuery);
         try {
             if (!password || !email || (!email && !password)) {
                 next(400);
