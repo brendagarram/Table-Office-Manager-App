@@ -1,11 +1,11 @@
 import './Table.css';
 
-const Table = ({ vertical, occupied, table }) => {
+const Table = ({ vertical, occupied, table, setChair }) => {
 
   
 
   function toggleChair(event){
-    console.log(event.target)
+    setChair(event.target.id)
     event.target.classList.toggle("green")
   }
 

@@ -1,28 +1,27 @@
-.smallOffice{
-  grid-template-columns: 1fr 1fr 1fr;
-  display: grid;
-  width: 211px;
-  height: 301px;
-  align-items: center;
-  justify-content: center;
-  place-items: center;
-  border: 1px solid violet;
-
+.smallOffice {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    width: 211px;
+    height: 301px;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    border: 1px solid #aad;
 }
 
 .OfficeTableSurface {
-  width: 75px;
-  height: 152px;
-  margin: auto;
-  background-color: #eee;
-  border: 1px solid violet;
-  border-radius: 10px;
+    width: 75px;
+    height: 152px;
+    margin: auto;
+    background-color: #eee;
+    border: 1px solid #aad;
+    border-radius: 10px;
 }
 
 .OfficeChair {
-border-radius: 5px;
-width: 30px;
-height: 58px;
-background-color: #eee;
-border: 1px solid hotpink;
+    border-radius: 5px;
+    width: 30px;
+    height: 58px;
+    background-color: #eee;
+    border: 1px solid #aad;
 }
