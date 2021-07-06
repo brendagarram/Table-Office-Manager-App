@@ -18,7 +18,7 @@ export default function Reservations({ reservations, chair }) {
       return (
         <li key={index}>
           <span>{reservation.seat} </span>
-          <span>{new Date(reservation.Start).getDay()} </span>
+          <span>{new Date(reservation.Start).toLocaleString('es-mx', {weekday:'long'})}</span>
           <span>De: {reservation.Start.match(/\d\d:\d\d/)}</span>
           <span>A: {reservation.Finish.match(/\d\d:\d\d/)}</span>
           <button onClick={() => deleteReservation(reservation._id)} >delete</button>
