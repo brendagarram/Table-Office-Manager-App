@@ -21,12 +21,13 @@ const deleteReservation = async(id) => {
 
 const createReservation = async({ start, finish, users, seat }) => {
     try {
-        const { data } = await axios.post(`${window.location.protocol}//${window.location.hostname}:8000/reservations/`, { headers: { Authorization: `Bearer ${userToken}` } }, {
+        const { data } = await axios.post(`${window.location.protocol}//${window.location.hostname}:8000/reservations/`,
+         {
             "Start": new Date(start),
             "Finish": new Date(finish),
-            "users": "60e0c85aaf2c283dd99493d2",
+            "users": users,
             "seat": seat
-        })
+        }, { headers: { Authorization: `Bearer ${userToken}` } })
         return data;
     } catch (error) {
         console.log(error);
